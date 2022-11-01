@@ -24,6 +24,7 @@ public class Exercise3 extends JFrame {
 	 * Create the frame.
 	 */
 	public Exercise3() {
+		//Inicialización de los componentes
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 586, 405);
 		contentPane = new JPanel();
@@ -44,6 +45,7 @@ public class Exercise3 extends JFrame {
 		rdbtnMac.setBounds(27, 90, 149, 23);
 		contentPane.add(rdbtnMac);
 
+		//Agrupo en un ButtonGroup los tres RadioButton para que solo se pueda marcar uno de ellos a la vez.
 		ButtonGroup bgroup = new ButtonGroup();
 		bgroup.add(rdbtnLinux);
 		bgroup.add(rdbtnMac);
@@ -79,18 +81,11 @@ public class Exercise3 extends JFrame {
 		});
 		btnTerminar.setBounds(284, 89, 117, 25);
 		contentPane.add(btnTerminar);
-		
-		
-		
 
 	}
 
-	// Método que verifica que cajas están seleccionadas y muestra toda la
-	// información
-
 	
-	
-	
+	//Comprobamos que Checkbox estan seleccionados, que groupButton y el número de horas en el Slider.
 	private void mostrarEncuesta(JCheckBox programacion, JCheckBox disGrafico, JCheckBox Administracion, JSlider slider, ButtonGroup bgroup) {
 		String programacionString = "";
 		String diseñograficoString = "";
@@ -113,9 +108,7 @@ public class Exercise3 extends JFrame {
 	}
 	
 
-	// Método para comprobar cual de todos los botones del grupo ha de devolver el
-	// texto.
-
+	//Nos devuelve el buttonGroup seleccionado (Sistemas operativos)
 	public String botonSeleccionado(ButtonGroup buttonGroup) {
 		for (Enumeration<AbstractButton> buttons = buttonGroup.getElements(); buttons.hasMoreElements();) {
 			AbstractButton button = buttons.nextElement();

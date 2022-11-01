@@ -23,7 +23,7 @@ public class Exercise2 extends JFrame {
 	 * Create the frame.
 	 */
 	public Exercise2() {
-		
+		//Array en el que guardaré los String que serán los nombres de las peliculas.
 		ArrayList<String> listaPeliculas = new ArrayList<String>();
 	    
 	    
@@ -49,17 +49,7 @@ public class Exercise2 extends JFrame {
 		comboBox.setBounds(335, 143, 191, 24);
 		contentPane.add(comboBox);
 		JButton btnAadir = new JButton("Añadir");
-		btnAadir.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				String pelicula = textField.getText();
-				
-			    listaPeliculas.add(pelicula);
-			    comboBox.addItem(pelicula);
-			    
-			    textField.setText("");
-
-			}
-		});
+		
 		btnAadir.setBounds(52, 227, 117, 25);
 		contentPane.add(btnAadir);
 		
@@ -67,5 +57,14 @@ public class Exercise2 extends JFrame {
 		lblEscribeElTtulo_1.setBounds(23, 43, 240, 25);
 		contentPane.add(lblEscribeElTtulo_1);
 		
+		//Añado al arrayList las peliculas que se escriben en el Textfield
+		btnAadir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String pelicula = textField.getText();
+			    listaPeliculas.add(pelicula);
+			    comboBox.addItem(pelicula);
+			    textField.setText("");
+			}
+		});
 	}
 }
